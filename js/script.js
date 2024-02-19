@@ -11,6 +11,7 @@ for (let seat of seats) {
             count++;
 
             setElementById("seatSelected", count);
+            seat.classList.add('bg-degin');
             seat.classList.add('bg-[#1DD100]');
             setElementByIdvalue("availableSeat", count);
             makeAtr(seatName);
