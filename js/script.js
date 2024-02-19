@@ -9,15 +9,20 @@ for (let seat of seats) {
         if (!selectedSeats.includes(seatName) && selectedSeats.length < 4) {
             selectedSeats.push(seatName);
             count++;
+
             setElementById("seatSelected", count);
             seat.classList.add('bg-[#1DD100]');
             setElementByIdvalue("availableSeat", count);
             makeAtr(seatName);
-            upgreadTotalPrice()
-            if (selectedSeats.length === 4) {
-                removeClassNameById("gtotal", 'hidden');
-            }
+            upgreadTotalPrice();
+            let input = document.getElementById("cupon");
+            let button = document.getElementById("cupbtn");
 
+
+            if (selectedSeats.length === 4) {
+                input.disabled = false;
+                button.disabled = false;
+            }
         } else {
             alert("Seat already selected or maximum limit reached.");
         }
@@ -43,8 +48,8 @@ function upgreadGrandPrice() {
 
 
 function validateForm() {
-    var passengerName = document.getElementById("passengerName").value;
-    var phoneNumber = document.getElementById("phoneNumber").value;
+    let passengerName = document.getElementById("passengerName").value;
+    let phoneNumber = document.getElementById("phoneNumber").value;
 
     if (passengerName === "" || phoneNumber === "" || selectedSeats.length === 0) {
         alert("Please complete all required fields. Ensure you have selected at least one seat.");
@@ -81,7 +86,7 @@ function resetValues() {
 function clearSpecificRows() {
     const table = document.getElementById("table");
     while (table.children.length > 1) {
-        table.removeChild(table.children[1]); 
+        table.removeChild(table.children[1]);
     }
 }
 

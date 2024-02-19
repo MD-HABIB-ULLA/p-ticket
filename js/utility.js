@@ -4,10 +4,10 @@ function setElementById(id, value) {
 function setElementByIdvalue(id, value) {
     document.getElementById(id).innerText = 40 - value;
 }
-function removeClassNameById(id, classNmae){
+function removeClassNameById(id, classNmae) {
     document.getElementById(id).classList.remove(classNmae)
 }
-function addClassNameById(id, classNmae){
+function addClassNameById(id, classNmae) {
     document.getElementById(id).classList.add(classNmae)
 }
 function makeAtr(value) {
@@ -24,9 +24,10 @@ function makeAtr(value) {
     tr.appendChild(td3);
     table.appendChild(tr);
 }
- function upgreadTotalPrice(){
-    let TotalPrice= parseInt(document.getElementById('totalPrice').innerText)
+function upgreadTotalPrice() {
+    let TotalPrice = parseInt(document.getElementById('totalPrice').innerText)
     TotalPrice = TotalPrice + 550;
+    document.getElementById('gPrice').innerText = TotalPrice;
 
     document.getElementById('totalPrice').innerText = TotalPrice
- }
+}
